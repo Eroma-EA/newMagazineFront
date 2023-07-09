@@ -1,0 +1,46 @@
+.basket_inner {
+  display: flex;
+}
+/* basket Style    //////////////////////////////// */
+
+.basket_cards {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.basket_cards > .card {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  justify-content: space-between;
+}
+
+.basket_cards > .card > div {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+}
+.basket_cards > .card > a > img {
+  width: 50px;
+}
+
+.basket_cards > .card > div > div > input {
+  font-size: 14px;
+  padding: 5px;
+  text-align: center;
+  border: none;
+  box-shadow: 0px 0px 1px 0px;
+}
+.basket_cards > .card > div > div > button {
+  cursor: pointer;
+  font-size: 25px;
+  border: none;
+  background-color: white;
+}
+.basket_cards > .card > div > p {
+  font-size: larger;
+}
+.basket_cards > .card > div > div {
+  display: flex;
+  gap: 10px;
+}

@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "../../../classwork/router/src/components/Navigation/NavigationItems/Navigationitem/NavigationItem.js"  ]
 }

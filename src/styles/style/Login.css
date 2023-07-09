@@ -1,0 +1,9 @@
+.login_inner {
+  display: flex;
+  justify-content: center;
+}
+
+.add_block {
+  display: flex;
+  justify-content: space-between;
+}

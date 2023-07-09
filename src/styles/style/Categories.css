@@ -1,0 +1,61 @@
+.cards_category {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* color: aliceblue; */
+  background-color: rgb(207, 221, 255);
+  border-radius: 0px 25px 25px 0px;
+}
+
+.cards_category-link {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  display: flex;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 22px;
+  margin-bottom: 5px;
+  border-radius: 0px 25px 25px 0px;
+  overflow: hidden;
+}
+/* .cards_category-link:hover {
+  border-top: 1px solid rgba(0, 0, 0, 0.49);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.49);
+} */
+.cards_category-link:last-child {
+  margin-bottom: 0;
+}
+
+.cards_category-hover {
+  /* border-radius: 5px; */
+  display: block;
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgb(255, 255, 255);
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.cards_category-text {
+  margin-top: 5px;
+  position: absolute;
+  text-align: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.cards_category-link:hover > a .cards_category-hover {
+  width: 100%;
+}
