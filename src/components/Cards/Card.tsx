@@ -48,7 +48,9 @@ const Card: FC<any> = (props) => {
     dispatch(baseCreate(base));
     dispatch(reviewRating(post));
     dispatch(reviewCreate(post));
-    dispatch(reviewGet(props.id));
+    setTimeout(() => {
+      dispatch(reviewGet(props.id));
+    }, 2000);
   };
 
   useEffect(() => {
@@ -137,25 +139,27 @@ const Card: FC<any> = (props) => {
           <div className="card_comments">
             <h1>Отзывы</h1>
             <ul>
-              {review.users.map((user) => (
-                <li key={user._id}>
-                  <h2>{user.email}</h2>
-                  <h3>
-                    {rating.map((r, index) =>
-                      Number(r) <= Number(user.rating) ? (
-                        <i key={index} className="yellow">
-                          <IconStars />
-                        </i>
-                      ) : (
-                        <i key={index} className="white">
-                          <IconStars />
-                        </i>
-                      )
-                    )}
-                  </h3>
-                  <p>{user.comment}</p>
-                </li>
-              ))}
+              {props.review.loading
+                ? "загрузка..."
+                : review.users.map((user) => (
+                    <li key={user._id}>
+                      <h2>{user.email}</h2>
+                      <h3>
+                        {rating.map((r, index) =>
+                          Number(r) <= Number(user.rating) ? (
+                            <i key={index} className="yellow">
+                              <IconStars />
+                            </i>
+                          ) : (
+                            <i key={index} className="white">
+                              <IconStars />
+                            </i>
+                          )
+                        )}
+                      </h3>
+                      <p>{user.comment}</p>
+                    </li>
+                  ))}
             </ul>
           </div>
         </>

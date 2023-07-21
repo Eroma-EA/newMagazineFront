@@ -8,6 +8,7 @@ import Basket from "./pages/Basket";
 import Sign from "./pages/Sign";
 import LoginForm from "./components/loginForm/LoginForm";
 import RegistrationForm from "./components/loginForm/RegistrationForm";
+import Purchases from "./pages/Purchases";
 import { checkAuth } from "./store/userSlice/userSlice";
 import { useAppDispatch } from "./hooks/reduxHooks";
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/Card" element={<CardId />} />
           <Route path="/Liked" element={<Liked />} />
           <Route path="/Basket" element={<Basket />} />
+          <Route path="/Purchases" element={<Purchases />} />
           <Route path="/Login" element={<Sign children={<LoginForm />} />} />
           <Route
             path="/Registration"

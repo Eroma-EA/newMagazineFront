@@ -21,13 +21,29 @@ const BasketCards = (props: any) => {
 
   const [base, setBase] = useState<IBook[]>(props.posts);
   const [quantity, setQuantity] = useState<Quantity[]>([]);
+  const [summ, setSumm] = useState<Number[]>([]);
+  // const [totalPrice, setTotalPrice] = useState<Number[]>([]);
 
   useEffect(() => {
     const newQuant = base.map((books: IBook) => {
       return { id: books._id, quantity: 1 };
     });
     setQuantity(newQuant);
+    setSumm(base.map((b) => Number(b.price)));
+    let total: number = 0;
+    quantity.map(
+      (q, i) => (total = Number(q.quantity) * Number(summ[i]) + Number(total))
+    );
+    props.setTotal(total);
   }, [base]);
+
+  useEffect(() => {
+    let total: number = 0;
+    quantity.map(
+      (q, i) => (total = Number(q.quantity) * Number(summ[i]) + Number(total))
+    );
+    props.setTotal(total);
+  }, [quantity]);
 
   const handleDelete = (
     e: React.MouseEvent<HTMLElement, MouseEvent>,

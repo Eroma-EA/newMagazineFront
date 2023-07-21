@@ -7,6 +7,7 @@ import reviewSlice from "./userSlice/reviewSlice";
 import categoriesSlice from "./userSlice/categoriesSlice";
 import recomendsSlice from "./userSlice/recomendsSlice";
 import searchSlice from "./userSlice/searchSlice";
+import sendSlice from "./userSlice/sendSlice";
 
 const combineReducer = combineReducers({
   user: userSlice,
@@ -17,6 +18,7 @@ const combineReducer = combineReducers({
   categories: categoriesSlice,
   recomends: recomendsSlice,
   search: searchSlice,
+  sendEmail: sendSlice,
 });
 
 export const store = configureStore({

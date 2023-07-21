@@ -67,10 +67,6 @@ const Search = (props: any) => {
             ))}
           </ul>
         </form>
-        
-        <ul>
-          <li >All</li>
-        </ul>
       </div>
     </>
   );

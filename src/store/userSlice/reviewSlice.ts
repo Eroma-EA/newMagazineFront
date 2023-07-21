@@ -41,6 +41,7 @@ export const reviewCreate = createAsyncThunk<
 
   return data;
 });
+
 export const reviewRating = createAsyncThunk<
   IReview,
   REVIEW,
@@ -53,7 +54,6 @@ export const reviewRating = createAsyncThunk<
   }
 
   const data = await response.data;
-
   return data;
 });
 

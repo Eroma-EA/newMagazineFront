@@ -1,13 +1,17 @@
 .basket_inner {
   display: flex;
+  margin-top: 20px;
+  gap: 10px;
 }
 /* basket Style    //////////////////////////////// */
 
 .basket_cards {
   display: flex;
   flex-direction: column;
+  height: auto;
   width: 50%;
 }
+
 .basket_cards > .card {
   display: flex;
   flex-direction: row;
@@ -20,6 +24,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .basket_cards > .card > a > img {
   width: 50px;
 }
@@ -31,15 +36,18 @@
   border: none;
   box-shadow: 0px 0px 1px 0px;
 }
+
 .basket_cards > .card > div > div > button {
   cursor: pointer;
   font-size: 25px;
   border: none;
   background-color: white;
 }
+
 .basket_cards > .card > div > p {
   font-size: larger;
 }
+
 .basket_cards > .card > div > div {
   display: flex;
   gap: 10px;

@@ -1,3 +1,10 @@
+.home_category {
+  background-color: rgb(255, 252, 231);
+  box-shadow: 0px 0px 1px 0px ;
+  border-radius: 25px;
+  padding: 15px;
+}
+
 .cards_category {
   display: flex;
   flex-direction: column;
@@ -10,8 +17,9 @@
   -webkit-user-select: none;
   user-select: none;
   /* color: aliceblue; */
-  background-color: rgb(207, 221, 255);
-  border-radius: 0px 25px 25px 0px;
+  border-radius: 15px;
+  background-color: rgb(255, 245, 186);
+  box-shadow: 0px 0px 5px 0px;
 }
 
 .cards_category-link {
@@ -35,13 +43,13 @@
 }
 
 .cards_category-hover {
-  /* border-radius: 5px; */
   display: block;
   position: absolute;
   z-index: 0;
   height: 100%;
   width: 0;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(179, 198, 255);
+  color: black;
   left: 0;
   top: 0;
   transition: all 0.3s ease-in-out;
@@ -50,7 +58,7 @@
 .cards_category-text {
   margin-top: 5px;
   position: absolute;
-  text-align: center;
+  margin-left: 10px;
 
   width: 100%;
   height: 100%;

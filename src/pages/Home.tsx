@@ -1,16 +1,28 @@
 import Cards from "../components/Cards/Cards";
 import Category from "../components/Cards/Category";
 import Search from "../components/Cards/Search";
-import { useHome, useRecomends, useUser } from "../hooks/useHooksSlice";
+import { useEffect } from "react";
+
+import {
+  useCategory,
+  usePosts,
+  useRecomends,
+  useUser,
+} from "../hooks/useHooksSlice";
 import Recomend from "../components/RecomendBlock/Recomend";
 
 const Home = () => {
-  const props = useHome();
-  const user = useUser();
+  //usePosts
+  const props = usePosts();
   const posts = props.posts;
-  const categories = props.categories;
-  const recomends = useRecomends()
   const searchName = props.searchName;
+
+  //useUser
+  const user = useUser();
+  //useCategory
+  const categories = useCategory();
+  //useRecomends Panel
+  const recomends = useRecomends();
 
   return (
     <section className="Home">

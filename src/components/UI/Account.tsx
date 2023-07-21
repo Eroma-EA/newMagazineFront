@@ -50,6 +50,11 @@ const AccountImg = (props: any) => {
               </Link>
             </li>
             <li>
+              <Link to={"/Purchases"}>
+                <p className="main-li">purchases</p>
+              </Link>
+            </li>
+            <li>
               <p className="main-li">settings</p>
             </li>
             <li onClick={() => dispatch(logout())}>
@@ -102,7 +107,7 @@ const AccountSpan = styled.span`
     display: none;
   }
   .show {
-    height: 230px;
+    height: 300px;
     width: 200px;
     opacity: 1;
   }

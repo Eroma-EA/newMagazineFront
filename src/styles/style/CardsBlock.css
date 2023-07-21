@@ -1,16 +1,12 @@
-
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-items: center;
   padding: 20px;
   margin-top: 10px;
-  background-color: white;
 }
 
 .cards_search {
-  background-color: white;
   width: 100%;
 }
 /* //////// */
@@ -100,12 +96,10 @@
 
 .search {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+
+  justify-content: center;
   padding: 20px;
   margin-left: 20px;
-  background-color: rgb(207, 221, 255);
-  border-radius: 25px 0px 0px 25px;
 }
 
 .search_form {

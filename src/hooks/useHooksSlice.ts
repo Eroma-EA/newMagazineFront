@@ -21,11 +21,10 @@ import { IBook } from "../models/IBook";
 // import { checkAuth } from "../store/userSlice/userSlice";
 
 //
-const dispatch = useAppDispatch();
-const _id = useAppSelector((state) => state.user.user.id);
 
 //Home
-export const useHome = () => {
+export const usePosts = () => {
+  const dispatch = useAppDispatch();
   // get post
   const posts = useAppSelector((state) => state.posts);
   const [newPosts, setNewPosts] = useState<any>(posts);
@@ -34,9 +33,6 @@ export const useHome = () => {
   const searchName = useAppSelector((state) => state.search.books);
   const [searching, setSearching] = useState<IBook[]>(searchName);
 
-  //get category
-  const categories = useAppSelector((state) => state.categories);
-  const [genres, setGenres] = useState<string[]>(categories.categories);
   const genre = Object.fromEntries(
     new URLSearchParams(window.location.search)
   ).genre;
@@ -61,9 +57,8 @@ export const useHome = () => {
 
   //get Category & Posts on Change states
   useEffect(() => {
-    setGenres(categories.categories);
     setNewPosts(posts);
-  }, [categories, posts]);
+  }, [posts]);
 
   //get Category & Posts on Change states
   useEffect(() => {
@@ -72,7 +67,6 @@ export const useHome = () => {
 
   //return data to HomePage
   const props = {
-    categories: genres as string[],
     posts: newPosts,
     searchName: { searchName: searching, setSearching: setSearching },
   };
@@ -82,6 +76,9 @@ export const useHome = () => {
 
 //UserBase
 export const useUser = () => {
+  const dispatch = useAppDispatch();
+  const _id = useAppSelector((state) => state.user.user.id);
+
   const user = useAppSelector((state) => state.userbase.user);
 
   //Get userBase
@@ -97,6 +94,7 @@ export const useUser = () => {
 
 //Recomends Panel
 export const useRecomends = () => {
+  const dispatch = useAppDispatch();
   const recomends = useAppSelector((state) => state.recomends.books);
   // Refresh
   useEffect(() => {
@@ -104,4 +102,17 @@ export const useRecomends = () => {
   }, []);
 
   return recomends;
+};
+
+//useCategories
+export const useCategory = () => {
+  const dispatch = useAppDispatch();
+  const categories = useAppSelector((state) => state.categories);
+  const [genres, setGenres] = useState<string[]>(categories.categories);
+
+  useEffect(() => {
+    setGenres(categories.categories);
+  }, [categories]);
+
+  return genres as string[];
 };

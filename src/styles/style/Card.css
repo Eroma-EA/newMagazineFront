@@ -14,6 +14,7 @@
   padding: 15px;
   display: flex;
 }
+
 .card_panel {
   display: flex;
   flex-direction: column;
@@ -34,11 +35,10 @@
 
 .white {
   fill: rgb(226, 226, 226);
-  /* filter: drop-shadow(0px 0px 1px rgb(0, 0, 0, 0.2)); */
 }
 .yellow {
   fill: rgb(202, 202, 119);
-  /* filter: drop-shadow(0px 0px 1px rgb(0, 0, 0, 0.2)); */
+  text-shadow: 0px 0px 1px black;
 }
 .cards > div {
   position: relative;
@@ -53,4 +53,21 @@
 }
 .del-icon:hover {
   scale: 1.1;
+}
+
+.card_description {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: rgb(255, 234, 140);
+  font-size: larger;
+  margin-bottom: 20px;
+}
+
+.card_comments > h1{
+  border-bottom: 1px solid;
+}
+.card_comments {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: rgb(248, 255, 210);
 }

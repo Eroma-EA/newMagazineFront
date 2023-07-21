@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IBook } from "../../models/IBook";
 import { Link } from "react-router-dom";
+import "../../styles/style/CardsRecomends.css";
 
 const Recomend = (props: any) => {
   const books: IBook[] = props.posts;

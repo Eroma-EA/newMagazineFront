@@ -42,11 +42,15 @@ const Cards = (props: any) => {
           <CardDiv key={b._id} className="card">
             <Link to={`/Card/?id=${b._id}`}>
               <div className="card_div-img">
-                <img
-                  className="cards_image"
-                  src={`http://localhost:5000/api/books/images/${b.picture}`}
-                  alt=""
-                />
+                {props.loading ? (
+                  " загрузка..."
+                ) : (
+                  <img
+                    className="cards_image"
+                    src={`http://localhost:5000/api/books/images/${b.picture}`}
+                    alt=""
+                  />
+                )}
               </div>
             </Link>
 
@@ -90,9 +94,9 @@ const Cards = (props: any) => {
                 </div>
               </div>
             )}
-            <p>{b.name}</p>
+            <p className="p-name">{b.name}</p>
             <p>{b.author}</p>
-            <p>{b.price}</p>
+            <p className="p-price">{b.price}₸</p>
           </CardDiv>
         );
       })}
